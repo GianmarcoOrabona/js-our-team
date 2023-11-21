@@ -1,8 +1,3 @@
-/* 
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite nella tabella
-*/
-
 // Array di oggetti con i dati dei membri del team
 let teamMembers = [
     {
@@ -40,14 +35,9 @@ let teamMembers = [
         role: "Graphic Designer",
         image: './assets/img/barbara-ramos-graphic-designer.jpg'
     }
-]
+];
 
 console.log(teamMembers);
-
-/*
-MILESTONE 1:
-Stampare su console le informazioni di nome, ruolo e la stringa della foto 
-*/
 
 // stampo in console le informazioni di nome, ruolo e stringa della foto
 for (let i = 0; i < teamMembers.length; i++) {
@@ -56,10 +46,22 @@ for (let i = 0; i < teamMembers.length; i++) {
     for (let key in member) {
         let membersDetails = member[key];
         console.log(`${key}: ${membersDetails}`);
-    }
-}
+    };
 
-/* 
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
-*/
+    // Credo un elemento del DOM per mostrare una card con le info del membro
+    const memberCard =
+        `<div class="col-4">
+            <div class="card">
+                <img src="${member.image}" class="img-fluid card-img-top" alt="team-member">
+                <div class="card-body">
+                    <h5 class="card-title">${member.name}</h5>
+                    <p class="card-text">${member.role}</p>
+                </div>
+            </div>
+         </div>`;
+
+    // Inserisco la card nel DOM
+    let container = document.querySelector('.row');
+    container.insertAdjacentHTML('beforeend', memberCard);
+};
+
