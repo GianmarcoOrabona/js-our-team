@@ -51,11 +51,11 @@ for (let i = 0; i < teamMembers.length; i++) {
     // Credo un elemento del DOM per mostrare una card con le info del membro
     const memberCard =
         `<div class="col-4">
-            <div class="card">
-                <img src="${member.image}" class="img-fluid card-img-top" alt="team-member">
-                <div class="card-body">
-                    <h5 class="card-title">${member.name}</h5>
-                    <p class="card-text">${member.role}</p>
+            <div class="card rounded-0 border-0 shadow">
+                <img src="${member.image}" class="img-fluid card-img-top rounded-0" alt="team-member">
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bold">${member.name}</h4>
+                    <p class="card-text fs-5">${member.role}</p>
                 </div>
             </div>
          </div>`;
